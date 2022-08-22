@@ -8,7 +8,7 @@ setup(
     name="tor-proxy",
     version=__version__,
     author="Jak Bin",
-    description="A simple way to run your any python service over tor using tor-proxy.",
+    description="A simple way to send your requests with tor using tor-proxy.",
     long_description=readme,
     long_description_content_type="text/markdown",
     url="https://github.com/jakbin/tor-proxy",

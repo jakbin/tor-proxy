@@ -1,6 +1,6 @@
 # Tor-Proxy
 
-Run your any python service over tor using tor-proxy.It doesn’t interfere with other tor processes on your computer, so you can use the Tor Browser or the system tor on their own.
+A simple way to send your requests with tor using tor-proxy.It doesn’t interfere with other tor processes on your computer, so you can use the Tor Browser or the system tor on their own.
 
  [![PyPI version](https://badge.fury.io/py/tor-proxy.svg)](https://badge.fury.io/py/tor-proxy)
  [![Downloads](https://pepy.tech/badge/tor-proxy/month)](https://pepy.tech/project/tor-proxy)
