@@ -25,6 +25,7 @@ pip install tor-proxy
 ```
 
 ## Quickstart
+
 1. Import with ```from tor_proxy import tor_proxy``` .
 2. call function `tor_proxy()` , store as variable and give it as port argument in proxies.
 
@@ -34,6 +35,45 @@ from tor_proxy import tor_proxy
 import requests
 
 port = tor_proxy()
+
+http_proxy  = f"socks5h://127.0.0.1:{port}"
+https_proxy = f"socks5h://127.0.0.1:{port}"
+
+proxies = { 
+              "http"  : http_proxy, 
+              "https" : https_proxy, 
+            }
+
+url = "https://api.ipify.org"
+
+r = requests.get(url, proxies=proxies)
+
+print(r.text)
+```
+
+## Command Line Usage
+
+After installing, you can run the Tor proxy service directly from the command line:
+
+```bash
+tor-proxy
+```
+
+This will start the Tor SOCKS proxy and print the port it is running on.
+
+```sh
+$ tor-proxy
+connecting_to_tor: 100% - Done
+Tor SOCKS proxy running on port: 47863
+```
+
+Now you can use this port as proxy in code.
+
+```python
+# tor_proxy_example.py
+import requests
+
+port = 47863
 
 http_proxy  = f"socks5h://127.0.0.1:{port}"
 https_proxy = f"socks5h://127.0.0.1:{port}"
