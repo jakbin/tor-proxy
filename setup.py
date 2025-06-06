@@ -32,4 +32,9 @@ setup(
         ]},
     install_requires=['stem'],
     zip_safe=False,
+    entry_points={
+        'console_scripts': [
+            'tor-proxy=tor_proxy.__main__:main',
+        ],
+    },
 )
