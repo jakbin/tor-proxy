@@ -15,6 +15,12 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
+    
+    - name: Get version from __init__.py
+      id: get_version
+      run: |
+        VERSION=$(grep -oP "__version__\s*=\s*['\"]([^'\"]+)['\"]" tor_proxy/__init__.py | grep -oP "['\"]([^'\"]+)['\"]" | tr -d "'\"")
+         >> $GITHUB_ENV
 
     - name: Install dependencies
       run: |
@@ -37,3 +43,13 @@ jobs:
       run: |
         python setup.py sdist bdist_wheel
         twine upload dist/*
+
+    - name: Create GitHub Release
+      uses: marvinpinto/action-automatic-releases@latest
+      with: 
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "${{ env.VERSION }}"
+        prerelease: false
+        title: "Build ${{ env.VERSION }}"
+        files: |
+          dist/*.whl
