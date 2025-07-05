@@ -6,7 +6,6 @@ import sys
 _onion_instance = None
 
 def get_onion_instance():
-    global _onion_instance
     return _onion_instance
 
 def tor_proxy():
