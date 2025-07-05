@@ -401,6 +401,14 @@ class Onion(object):
                 self.tor_proc.kill()
             self.tor_proc = None
 
+        # Cleanup temp directory if it exists
+        if hasattr(self, 'tor_data_directory') and self.tor_data_directory:
+            try:
+                self.tor_data_directory.cleanup()
+            except Exception:
+                pass
+            self.tor_data_directory = None
+
         # Reset other Onion settings
         self.connected_to_tor = False
         self.stealth = False
