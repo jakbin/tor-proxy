@@ -67,6 +67,22 @@ connecting_to_tor: 100% - Done
 Tor SOCKS proxy running on port: 47863
 ```
 
+### Additional Command Line Options
+
+- Run as a background (detached) process:
+
+  ```bash
+  tor-proxy --detach
+  ```
+  This will start the Tor proxy in the background.
+
+- Kill all running Tor processes started with `/usr/bin/tor -f /tmp/...`:
+
+  ```bash
+  tor-proxy --kill
+  ```
+  This will find and terminate all matching Tor processes.
+
 Now you can use this port as proxy in code.
 
 ```python
