@@ -20,7 +20,7 @@ jobs:
       id: get_version
       run: |
         VERSION=$(grep -oP "__version__\s*=\s*['\"]([^'\"]+)['\"]" tor_proxy/__init__.py | grep -oP "['\"]([^'\"]+)['\"]" | tr -d "'\"")
-         >> $GITHUB_ENV
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
 
     - name: Install dependencies
       run: |
