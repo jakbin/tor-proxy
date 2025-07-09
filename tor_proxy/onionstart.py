@@ -37,3 +37,22 @@ class OnionStart(object):
     def get_tor_socks_port(self):
         self.socks_port = self.onion.get_tor_socks_port()
         return self.socks_port
+
+    def tor_data_dir(self):
+        """
+        Get the Tor data directory.
+        """
+        # print(type(self.onion.tor_data_directory))
+        return self.onion.tor_data_directory.name
+    
+    def tor_torrc_path(self):
+        """
+        Get the path to the torrc file.
+        """
+        return self.onion.tor_torrc
+
+    def tor_control_socket(self):
+        """
+        Get the path to the Tor control socket.
+        """
+        return self.onion.tor_control_socket
