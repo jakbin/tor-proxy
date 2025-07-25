@@ -2,6 +2,7 @@
 
 A simple way to send your requests with tor using tor-proxy.It doesn’t interfere with other tor processes on your computer, so you can use the Tor Browser or the system tor on their own.
 
+ [![Python package](https://github.com/jakbin/tor-proxy/actions/workflows/publish.yml/badge.svg)](https://github.com/jakbin/tor-proxy/actions/workflows/publish.yml)
  [![PyPI version](https://badge.fury.io/py/tor-proxy.svg)](https://badge.fury.io/py/tor-proxy)
  [![Downloads](https://pepy.tech/badge/tor-proxy/month)](https://pepy.tech/project/tor-proxy)
  [![Downloads](https://static.pepy.tech/personalized-badge/tor-proxy?period=total&units=international_system&left_color=green&right_color=blue&left_text=Total%20Downloads)](https://pepy.tech/project/tor-proxy)
